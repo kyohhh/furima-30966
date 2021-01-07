@@ -2,18 +2,17 @@
 
 ## usersテーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| nickname         | string  | null: false |
-| email            | string  | null: false |
-| password         | string  | null: false |
-| family_name      | string  | null: false |
-| first_name       | string  | null: false |
-| family_name_kana | string  | null: false |
-| first_name_kana  | string  | null: false |
-| birth_year       | integer | null: false |
-| birth_month      | integer | null: false |
-| birth_day        | integer | null: false |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: false |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| family_name        | string  | null: false |
+| first_name         | string  | null: false |
+| family_name_kana   | string  | null: false |
+| first_name_kana    | string  | null: false |
+| birthday           | date    | null: false |
+
 
 ### Association
 
@@ -30,7 +29,7 @@
 | category_id         | integer    | null: false                    |
 | state_id            | integer    | null: false                    |
 | shipping_charges_id | integer    | null: false                    |
-| shipping_area_id    | integer    | null: false                    |
+| prefecture_id       | integer    | null: false                    |
 | days_to_ship_id     | integer    | null: false                    |
 | price               | integer    | null: false                    |
 | user                | references | null: false, foreign_key: true |
@@ -59,7 +58,7 @@
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
 | post_code     | string  | null: false |
-| prefecture    | integer | null: false |
+| prefecture_id | integer | null: false |
 | city          | string  | null: false |
 | address       | string  | null: false |
 | building_name | string  | null: false |
