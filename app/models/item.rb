@@ -25,7 +25,7 @@ class Item < ApplicationRecord
     validates :description
     validates :category_id
     validates :state_id
-    validates :shipping_charges_id
+    validates :shipping_charge_id
     validates :prefecture_id
     validates :days_to_ship_id
     # 価格の範囲が、¥300~¥9,999,999の間であること
@@ -37,7 +37,7 @@ class Item < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :state_id
-    validates :shipping_charges_id
+    validates :shipping_charge_id
     validates :prefecture_id
     validates :days_to_ship_id
   end
