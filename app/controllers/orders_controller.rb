@@ -1,7 +1,15 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
+
+
   def index
     @item = Item.find(params[:item_id])
-    @user_order = UserOrder.new   #フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
+    if current_user.id == @item.user_id
+      redirect_to :root
+    else
+      @item
+      @user_order = UserOrder.new   #フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
+    end
   end
 
   def create
