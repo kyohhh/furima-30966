@@ -12,11 +12,9 @@ class UserOrder
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "is invalid." }
   end
 
-  validates :building_name
-
   def save
     #購入情報を保存する
-    purchase = Purchase.create(user_id: user_id, item_id: item_id)
+    order = Order.create(user_id: user_id, item_id: item_id)
     #住所情報を保存する
     Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, address: address, building_name: building_name, phone_number: phone_number,purchase_id: purchase_id)
   end
