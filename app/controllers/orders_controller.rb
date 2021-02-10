@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id || @item.order.present?
       redirect_to :root
     else
       @item
@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @user_order = UserOrder.new(order_params)
     if @user_order.valid?
       @user_order.save
@@ -25,7 +26,8 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:user_order).permit(:post_code, :prefecture_id, :city, :address, :building_name, :phone_number, :purchase)
+    params.require(:user_order).permit(:post_code, :prefecture_id, :city, :address, :building_name, :phone_number,
+                                       :purchase).merge(user_id: current_user.id, item_id: @item.id)
   end
 
 end
