@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
     if current_user.id == @item.user_id || @item.order.present?
       redirect_to :root
     else
-      @item
       @user_order = UserOrder.new   # フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
     end
   end
