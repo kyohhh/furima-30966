@@ -4,7 +4,7 @@ FactoryBot.define do
     description         { 'あいうえお' }
     category_id         { 2 }
     state_id            { 2 }
-    shipping_charges_id { 2 }
+    shipping_charge_id  { 2 }
     prefecture_id       { 2 }
     days_to_ship_id     { 2 }
     price               { 300 }
