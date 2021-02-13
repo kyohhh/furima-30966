@@ -18,14 +18,14 @@ RSpec.describe UserOrder, type: :model do
         expect(@user_order.errors.full_messages).to include("Post code can't be blank")
       end
       it 'post_codeはハイフン(半角)がないと登録できない' do
-        @user_order.post_code = "1234567"
+        @user_order.post_code = '1234567'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@user_order.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'post_codeは半角数字でないと登録できない' do
-        @user_order.post_code = "１２３-４５６７"
+        @user_order.post_code = '１２３-４５６７'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@user_order.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'prefecture_idが1だと登録できない' do
         @user_order.prefecture_id = 1
@@ -48,14 +48,14 @@ RSpec.describe UserOrder, type: :model do
         expect(@user_order.errors.full_messages).to include "Phone number can't be blank"
       end
       it 'phone_numberは12桁以上だと登録できない' do
-        @user_order.phone_number = "090123456789"
+        @user_order.phone_number = '090123456789'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Phone number is invalid."
+        expect(@user_order.errors.full_messages).to include 'Phone number is invalid.'
       end
       it 'phone_numberは半角数字でないと登録できない' do
-        @user_order.phone_number = "０９０１２３４５６７８"
+        @user_order.phone_number = '０９０１２３４５６７８'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Phone number is invalid."
+        expect(@user_order.errors.full_messages).to include 'Phone number is invalid.'
       end
       it 'tokenが空では登録できない' do
         @user_order.token = nil
