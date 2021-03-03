@@ -20,7 +20,7 @@ class Item < ApplicationRecord
   # 発送までの日数についての情報が必須であること
   # 価格についての情報が必須であること
   with_options presence: true do
-    validates :image
+    validates :image, presence: { message: 'を選択してください' }
     validates :item_name
     validates :description
     validates :category_id

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname
+    validates :nickname, presence: { message: 'は1文字以上入力してください' }
     validates :email
     validates :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/ }
     with_options format: { with: /\A[ぁ-んァ-ン一-龥]/ } do
