@@ -1,5 +1,5 @@
 .breadcrumbs {
-  background-color: ivory;
+  background-color: white;
   font-style: italic;
 }
 
@@ -11,6 +11,6 @@
   color: gray;
 }
 
-.breadcrumbs:hover,.breadcrumbs a:hover {
+.breadcrumbs a:hover {
   color: palevioletred;
 }

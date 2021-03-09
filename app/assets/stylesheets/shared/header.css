@@ -7,6 +7,7 @@
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .search-bar-contents {
@@ -30,7 +31,9 @@
 .search-form>.input-box {
   width: 100%;
   height: 5vh;
+  margin-right: 0.5vw;
   padding-left: 10px;
+  border-radius: 15px;/*角の丸み*/
 }
 
 .search-button {
@@ -39,6 +42,8 @@
   cursor: pointer;
   background-color: #3ccace;
   padding: 8px;
+  border-radius: 15px;/*角の丸み*/
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 }
 
 .search-icon {
@@ -57,18 +62,35 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-
 }
 
 .category-list {
+  margin-right: 1vw;
+  display: inline-block;
+  padding: 0.3em 1em;
   text-decoration: none;
-  margin-right: 3vw;
   color: #333333;
+  border: solid 2px white;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.category-list:hover {
+  color: rgb(255, 0, 85);
 }
 
 .brand-list {
+  display: inline-block;
+  padding: 0.3em 1em;
   text-decoration: none;
   color: #333333;
+  border: solid 2px white;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.brand-list:hover {
+  color: rgb(255, 0, 85);
 }
 
 .lists-right {
@@ -79,26 +101,60 @@
 
 
 .user-nickname {
-  text-decoration: none;
   margin-right: 3vw;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
   color: #333333;
-  font-weight: bold;
+  border: solid 2px white;
+  border-radius: 3px;
+  transition: .4s;
+  font-style: italic;
+}
+
+.user-nickname:hover {
+  color: rgb(255, 0, 85);
 }
 
 
 .logout {
+  margin-right: 3vw;
+  display: inline-block;
+  padding: 0.3em 1em;
   text-decoration: none;
-  color: #333333;
+  color: white;
+  background: #333333;/*ボタン色*/
+  border: solid 1px #333333;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.logout:hover {
+  color: rgb(73, 73, 73);
 }
 
 .login {
-  text-decoration: none;
-  line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #3ccace;
+  border: solid 2px #3ccace;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.login:hover {
+  background: #3ccace;
+  color: white;
 }
 
 .sign-up {
+  display: inline-block;
+  padding: 0.3em 1em;
   text-decoration: none;
-  color: #333333;
+  border: solid 2px #ff3636;
+  background: #ff3636;/*ボタン色*/
+  color: #FFF;
+  border-radius: 3px;
 }
