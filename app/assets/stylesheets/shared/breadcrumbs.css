@@ -1,0 +1,16 @@
+.breadcrumbs {
+  background-color: ivory;
+  font-style: italic;
+}
+
+.breadcrumbs a {
+  color: black;
+}
+
+.current {
+  color: gray;
+}
+
+.breadcrumbs:hover,.breadcrumbs a:hover {
+  color: palevioletred;
+}
