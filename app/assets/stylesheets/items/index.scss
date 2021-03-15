@@ -37,6 +37,7 @@ a {
 
 .slider {
   width: 70vw;
+  margin: 0 10px 0;
 }
 
 .slider img{
@@ -49,7 +50,7 @@ a {
   position: absolute;
   z-index: 100;
   left: 50px;
-  top: 110px;
+  top: 140px;
 }
 
 .fa-arrow-alt-circle-right {
@@ -57,7 +58,7 @@ a {
   position: absolute;
   z-index: 100;
   right: 50px;
-  top: 110px
+  top: 140px
 }
 
 .store-btn {

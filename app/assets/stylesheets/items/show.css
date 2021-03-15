@@ -58,6 +58,7 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius: 15px;/*角の丸み*/
 }
 
 .or-text {
