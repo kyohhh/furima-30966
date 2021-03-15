@@ -2,6 +2,11 @@ crumb :root do
   link "トップ", root_path
 end
 
+crumb :new_item do |item|
+  link "商品出品", new_item_path
+  parent :root
+end
+
  crumb :show_item do |item|
    link "商品詳細", item_path(item)
    parent :root
