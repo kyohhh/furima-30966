@@ -30,11 +30,12 @@ class Item < ApplicationRecord
     validates :days_to_ship_id
     # 価格の範囲が、¥300~¥9,999,999の間であること
     # 販売価格は半角数字のみ保存可能であること
-    validates :price, inclusion: { in: 300..9_999_999 }, format: { with: /\A[0-9]+\z/ }
+    validates :price, inclusion: { in: 300..9_999_999, message: 'は300〜9,999,999(半角数字)円以内にしてください' },
+                      format: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }
   end
 
   # ジャンルの選択が「--」の時は保存できないようにする
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :category_id
     validates :state_id
     validates :shipping_charge_id

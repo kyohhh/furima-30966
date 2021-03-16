@@ -5,18 +5,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname, presence: { message: 'は1文字以上入力してください' }
+    validates :nickname, presence: { message: 'を入力してください' }
     validates :email
-    validates :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/ }
-    with_options format: { with: /\A[ぁ-んァ-ン一-龥]/ } do
+    validates :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/,
+                                   message: 'は半角英数字で入力してください'  }
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥]/,message: 'は全角で入力してください' } do
       validates :family_name
       validates :first_name
     end
-    with_options format: { with: /\A[ァ-ヶー－]+\z/ } do
+    with_options format: { with: /\A[ァ-ヶー－]+\z/,message: 'は全角カナで入力してください' } do
       validates :family_name_kana
       validates :first_name_kana
     end
-    validates :birthday
+    validates :birthday,presence: { message: 'を選択してください' }
   end
 
   has_many :items

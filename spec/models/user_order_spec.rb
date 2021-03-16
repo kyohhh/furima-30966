@@ -22,62 +22,62 @@ RSpec.describe UserOrder, type: :model do
       it 'post_codeが空だと登録できない' do
         @user_order.post_code = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include("Post code can't be blank")
+        expect(@user_order.errors.full_messages).to include '郵便番号を入力してください'
       end
       it 'post_codeはハイフン(半角)がないと登録できない' do
         @user_order.post_code = '1234567'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
+        expect(@user_order.errors.full_messages).to include '郵便番号は半角数字(ハイフン含む)で入力してください'
       end
       it 'post_codeは半角数字でないと登録できない' do
         @user_order.post_code = '１２３-４５６７'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
+        expect(@user_order.errors.full_messages).to include '郵便番号は半角数字(ハイフン含む)で入力してください'
       end
       it 'prefecture_idが1だと登録できない' do
         @user_order.prefecture_id = 1
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Prefecture can't be blank"
+        expect(@user_order.errors.full_messages).to include '都道府県を選択してください'
       end
       it 'cityが空だと登録できない' do
         @user_order.city = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "City can't be blank"
+        expect(@user_order.errors.full_messages).to include '市区町村を入力してください'
       end
       it 'addressが空だと登録できない' do
         @user_order.address = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Address can't be blank"
+        expect(@user_order.errors.full_messages).to include '番地を入力してください'
       end
       it 'phone_numberが空だと登録できない' do
         @user_order.phone_number = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Phone number can't be blank"
+        expect(@user_order.errors.full_messages).to include '電話番号を入力してください'
       end
       it 'phone_numberは12桁以上だと登録できない' do
         @user_order.phone_number = '090123456789'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include 'Phone number is invalid.'
+        expect(@user_order.errors.full_messages).to include '電話番号は半角数字(10,11桁)で入力してください'
       end
       it 'phone_numberは半角数字でないと登録できない' do
         @user_order.phone_number = '０９０１２３４５６７８'
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include 'Phone number is invalid.'
+        expect(@user_order.errors.full_messages).to include '電話番号は半角数字(10,11桁)で入力してください'
       end
       it 'tokenが空では登録できない' do
         @user_order.token = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Token can't be blank"
+        expect(@user_order.errors.full_messages).to include 'クレジットカード情報を入力してください'
       end
       it 'user_idが空では購入できない' do
         @user_order.user_id = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "User can't be blank"
+        expect(@user_order.errors.full_messages).to include 'Userを入力してください'
       end
       it 'item_idが空では購入できない' do
         @user_order.item_id = nil
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include "Item can't be blank"
+        expect(@user_order.errors.full_messages).to include 'Itemを入力してください'
       end
     end
   end

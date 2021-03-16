@@ -3,10 +3,10 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        family_name: 名字(全角)
-        first_name: 名前(全角)
-        family_name_kana: 名字カナ(全角)
-        first_name_kana: 名前カナ(全角)
+        family_name: 姓
+        first_name: 名
+        family_name_kana: 姓カナ
+        first_name_kana: 名カナ
         birthday: 生年月日
       item:
         image: 画像
@@ -18,4 +18,12 @@ ja:
         prefecture_id: 発送元の地域
         days_to_ship_id: 発送までの日数
         price: 価格
-        
+  activemodel:
+    attributes:
+      user_order:
+        post_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address: 番地
+        phone_number: 電話番号
+        token: クレジットカード情報
