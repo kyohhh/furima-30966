@@ -1,4 +1,14 @@
 Rails.application.configure do
+  #AWSでデプロイ時の設定
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://http://3.141.92.227/cable" 
+  config.action_cable.allowed_request_origins = ['http://http://3.141.92.227']
+
+  #Herokuでデプロイ時の設定
+  #ActionCable.server.config.disable_request_forgery_protection = true
+  #config.action_cable.url = "wss://【Herokuアプリ名】.herokuapp.com/cable" 
+  #config.action_cable.allowed_request_origins = ['https://【Herokuアプリ名】.herokuapp.com', 'http://【Herokuアプリ名】.herokuapp.com']
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
