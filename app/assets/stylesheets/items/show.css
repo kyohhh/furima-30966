@@ -148,6 +148,26 @@
   text-align: center;
 }
 
+.comment-title {
+  margin: 10px auto;
+  position: ;
+  border-radius: 20px;
+  width: 15vw;
+  min-width: 200px;
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid #dedede;
+}
+
+.comment-list {
+  border: 1px solid #dedede;
+}
+
+.comment-user {
+  font-size: small;
+  color: blue;
+}
+
 .comment-warn {
   background-color: moccasin;
   padding: 10px;
@@ -179,7 +199,7 @@
 .comment-list {
   background-color: white;
   margin: 10px 0px;
-  padding: 30px 0px;
+  padding: 10px 0px;
 }
 
 .comment-one {

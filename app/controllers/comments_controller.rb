@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comments = Comment.all
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment
+      ActionCable.server.broadcast 'comment_channel', content: @comment, user: @comment.user
     end
   end
 
