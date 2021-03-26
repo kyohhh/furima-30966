@@ -85,18 +85,13 @@
   <div class="comment-box">
     <h2 class="comment-title">コメント一覧</h2>
     <div class="comment-list", id="comments" >
-      <% @comments.reverse_each do |comment| %>
+      <% @comments.each do |comment| %>
         <div class="comment-one">
           <p class="comment-user"><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></p>
           <p class="comment-content"><%= comment.text %></p>
         </div>
       <% end %>
     </div>
-    <p class="comment-warn">
-      相手のことを考え丁寧なコメントを心がけましょう。
-      <br>
-      不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    </p>
     <div class="comment">
       <% if user_signed_in? %>
         <%= form_with model: [@item, @comment] do |f| %>
@@ -104,10 +99,14 @@
           <%= f.submit "コメントする", class: "comment-btn" %>
         <% end %>
       <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <strong><p class="comment-login-warn">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
     </div>
-    
+    <p class="comment-warn">
+      相手のことを考え丁寧なコメントを心がけましょう。
+      <br>
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    </p>
     
   </div>
   <div class="links">
